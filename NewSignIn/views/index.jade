@@ -1,0 +1,45 @@
+extends layout
+
+block content
+	#main
+		h1 注册
+		span.red #{error}
+		#panel
+			h2 用户注册
+			hr
+			form#signInForm(method='POST')
+				label
+					| 用户名: 
+					input#username(type='text', name='username', autocomplete='off')
+				p 用户名为6~18位英文字母、数字或下划线，且必须以英文字母开头
+				
+				label
+					| 密码: 
+					input#password(type='password', name='password', autocomplete='off')
+				p 密码为6~12位数字、大小写字母、中划线、下划线
+				
+				label
+					| 重复密码: 
+					input#repeat-password(type='password', name='repeat-password', autocomplete='off')
+				p 重复密码应与密码一致
+				
+				label
+					| 学号: 
+					input#studentId(type='text', name='studentId', autocomplete='off')
+				p 学号为8位数字，且不能以0开头
+				
+				label
+					| 电话: 
+					input#phone(type='text', name='phone', autocomplete='off')
+				p 电话为11位数字，且不能以0开头
+				
+				label
+					| 邮箱: 
+					input#email(type='text', name='email', autocomplete='off')
+				p 邮箱应满足通用格式
+				a.switch-register-signin(href='/signin') 登录
+				button#reset(type='reset', name='reset') 重置
+				button#submit(type='submit', name='submit') 提交
+			#hint ConfictHint
+	script(type='text/javascript', src='/javascripts/index.js')
+	script(type='text/javascript', src='/javascripts/signin.js')

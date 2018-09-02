@@ -1,0 +1,27 @@
+extends layout
+
+block content
+	#main
+		h1 详细
+		span.red #{error}
+		#panel
+			h2 用户详细
+			| 					用户名: 
+			label(name='username')
+				span #{user.username}
+			br
+			| 					学号: 
+			label(name='studentId')
+				span #{user.studentId}
+			br
+			| 					电话: 
+			label(name='phone')
+				span #{user.phone}
+			br
+			| 					邮箱: 
+			label(name='email')
+				span #{user.email}
+			br
+			
+			a.switch-info-signin(href='/signout') 退出
+	script(type='text/javascript', src='jquery.js')

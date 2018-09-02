@@ -1,0 +1,23 @@
+extends layout
+
+block content
+	#main
+		h1 登录
+		span.red #{error}
+		#panel
+			h2 用户登录
+			hr
+			form#signInForm(method='POST')
+				label
+					| 用户名: 
+					input#username(type='text', name='username', autocomplete='off')
+				p 用户名为6~18位英文字母、数字或下划线，且必须以英文字母开头
+				
+				label
+					| 密码: 
+					input#password(type='password', name='password', autocomplete='off')
+				p 密码为6~12位数字、大小写字母、中划线、下划线
+				a.switch-signin-index(href='/register') 注册
+				button#reset(type='reset', name='reset') 重置
+				button#submit(type='submit', name='submit') 提交
+			#hint ConfictHint

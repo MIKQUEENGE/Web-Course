@@ -1,0 +1,203 @@
+body{overflow: scroll;}
+h1, div{font-family: "Century Gothic", Arial, sans-serif;text-align: center;font-weight: normal;}
+
+#head{text-align: center;position: relative;top: 15px;font-style: italic;}
+
+.button{
+	margin: auto;
+	text-align: center;
+	position: fixed;
+}
+
+.button .current{background-color: lightgray !important;}
+
+
+.button div{
+	margin-bottom: 5px;
+	font-size: 15px;
+	width: 63px;
+	padding: 1px;
+	border: 1px solid gray;
+	border-radius: 5px;
+	transition: all 0.6s;
+	cursor: default;
+}
+
+.button div:hover{
+	background-color: lightgray;
+	transform: translateY(-1px);
+}
+
+#input{position: relative;}
+
+#newImg{
+	opacity: 0;
+	width: 53px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#hintImg{
+	width: 600px;
+	height: 600px;
+	position: relative;
+	top: 23px;
+	z-index: -1;
+	opacity: 0;
+	transition: all 1s;
+}
+
+.hint{
+	z-index: 1002 !important;
+	opacity: 1 !important;
+}
+
+#puzzle{position: absolute;top: 20px;left: 50%;}
+
+#main{
+	position: absolute;
+	left: -310px;
+	width: 600px;
+	height: 600px;
+	border: 1px solid gray;
+	border-radius: 20px;
+	padding: 10px;
+	box-shadow: 0px 0px 10px rgb(100, 100, 100);
+	font-size: 0px;
+	background-color: lightgray;
+	overflow: hidden;
+	transition-property: all;
+	transition-duration: 0s;
+}
+
+.mode3 div{width: 198px;height: 198px;}
+.mode4 div{width: 148px;height: 148px;}
+.mode5 div{width: 118px;height: 118px;}
+
+#main div{
+	overflow: hidden;
+	border: 1px solid lightgray;
+	display: inline-block;
+	opacity: 1;
+	transition-property: all;
+	transition-duration: 0.5s;
+}
+
+#main div:hover{
+	transform: scale(1.02);
+	opacity: 0.7 !important;
+	z-index: 1002 !important;
+}
+
+#main img{
+	width: 598px;
+	height: 598px;
+	position: relative;
+	overflow: hidden;
+	clip: rect(0px 200px 200px 0px);
+	transition-property: all;
+	transition-duration: 0.5s;
+}
+
+#main .cell9-0 img{left: 0px;top: 0px;}
+#main .cell9-1 img{left: -200px;top: 0px;}
+#main .cell9-2 img{left: -400px;top: 0px;}
+#main .cell9-3 img{left: 0px;top: -200px;}
+#main .cell9-4 img{left: -200px;top: -200px;}
+#main .cell9-5 img{left: -400px;top: -200px;}
+#main .cell9-6 img{left: 0px;top: -400px;}
+#main .cell9-7 img{left: -200px;top: -400px;}
+
+#main .cell16-1 img{left: -150px;top: 0px;}
+#main .cell16-2 img{left: -300px;top: 0px;}
+#main .cell16-3 img{left: -450px;top: 0px;}
+#main .cell16-4 img{left: 0px;top: -150px;}
+#main .cell16-5 img{left: -150px;top: -150px;}
+#main .cell16-6 img{left: -300px;top: -150px;}
+#main .cell16-7 img{left: -450px;top: -150px;}
+#main .cell16-8 img{left: -0px;top: -300px;}
+#main .cell16-9 img{left: -150px;top: -300px;}
+#main .cell16-10 img{left: -300px;top: -300px;}
+#main .cell16-11 img{left: -450px;top: -300px;}
+#main .cell16-12 img{left: 0px;top: -450px;}
+#main .cell16-13 img{left: -150px;top: -450px;}
+#main .cell16-14 img{left: -300px;top: -450px;}
+
+#main .cell25-1 img{left: -120px;top: 0px;}
+#main .cell25-2 img{left: -240px;top: 0px;}
+#main .cell25-3 img{left: -360px;top: 0px;}
+#main .cell25-4 img{left: -480px;top: 0px;}
+#main .cell25-5 img{left: 0px;top: -120px;}
+#main .cell25-6 img{left: -120px;top: -120px;}
+#main .cell25-7 img{left: -240px;top: -120px;}
+#main .cell25-8 img{left: -360px;top: -120px;}
+#main .cell25-9 img{left: -480px;top: -120px;}
+#main .cell25-10 img{left: 0px;top: -240px;}
+#main .cell25-11 img{left: -120px;top: -240px;}
+#main .cell25-12 img{left: -240px;top: -240px;}
+#main .cell25-13 img{left: -360px;top: -240px;}
+#main .cell25-14 img{left: -480px;top: -240px;}
+#main .cell25-15 img{left: 0px;top: -360px;}
+#main .cell25-16 img{left: -120px;top: -360px;}
+#main .cell25-17 img{left: -240px;top: -360px;}
+#main .cell25-18 img{left: -360px;top: -360px;}
+#main .cell25-19 img{left: -480px;top: -360px;}
+#main .cell25-20 img{left: 0px;top: -480px;}
+#main .cell25-21 img{left: -120px;top: -480px;}
+#main .cell25-22 img{left: -240px;top: -480px;}
+#main .cell25-23 img{left: -360px;top: -480px;}
+
+#main div{position: absolute;}
+#main #cell9-0{left: 10px;top: 10px;}
+#main #cell9-1{left: 210px;top: 10px;}
+#main #cell9-2{left: 410px;top: 10px;}
+#main #cell9-3{left: 10px;top: 210px;}
+#main #cell9-4{left: 210px;top: 210px;}
+#main #cell9-5{left: 410px;top: 210px;}
+#main #cell9-6{left: 10px;top: 410px;}
+#main #cell9-7{left: 210px;top: 410px;}
+#main #cell9-8{left: 410px;top: 410px;}
+
+#main #cell16-0{left: 10px;top: 10px;}
+#main #cell16-1{left: 160px;top: 10px;}
+#main #cell16-2{left: 310px;top: 10px;}
+#main #cell16-3{left: 460px;top: 10px;}
+#main #cell16-4{left: 10px;top: 160px;}
+#main #cell16-5{left: 160px;top: 160px;}
+#main #cell16-6{left: 310px;top: 160px;}
+#main #cell16-7{left: 460px;top: 160px;}
+#main #cell16-8{left: 10px;top: 310px;}
+#main #cell16-9{left: 160px;top: 310px;}
+#main #cell16-10{left: 310px;top: 310px;}
+#main #cell16-11{left: 460px;top: 310px;}
+#main #cell16-12{left: 10px;top: 460px;}
+#main #cell16-13{left: 160px;top: 460px;}
+#main #cell16-14{left: 310px;top: 460px;}
+#main #cell16-15{left: 460px;top: 460px;}
+
+#main #cell25-0{left: 10px;top: 10px;}
+#main #cell25-1{left: 130px;top: 10px;}
+#main #cell25-2{left: 250px;top: 10px;}
+#main #cell25-3{left: 370px;top: 10px;}
+#main #cell25-4{left: 490px;top: 10px;}
+#main #cell25-5{left: 10px;top: 130px;}
+#main #cell25-6{left: 130px;top: 130px;}
+#main #cell25-7{left: 250px;top: 130px;}
+#main #cell25-8{left: 370px;top: 130px;}
+#main #cell25-9{left: 490px;top: 130px;}
+#main #cell25-10{left: 10px;top: 250px;}
+#main #cell25-11{left: 130px;top: 250px;}
+#main #cell25-12{left: 250px;top: 250px;}
+#main #cell25-13{left: 370px;top: 250px;}
+#main #cell25-14{left: 490px;top: 250px;}
+#main #cell25-15{left: 10px;top: 370px;}
+#main #cell25-16{left: 130px;top: 370px;}
+#main #cell25-17{left: 250px;top: 370px;}
+#main #cell25-18{left: 370px;top: 370px;}
+#main #cell25-19{left: 490px;top: 370px;}
+#main #cell25-20{left: 10px;top: 490px;}
+#main #cell25-21{left: 130px;top: 490px;}
+#main #cell25-22{left: 250px;top: 490px;}
+#main #cell25-23{left: 370px;top: 490px;}
+#main #cell25-24{left: 490px;top: 490px;}

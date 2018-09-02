@@ -1,0 +1,204 @@
+#at-plus-container{
+	font-family: Arial, sans-serif;
+}
+
+.info ul{
+	list-style-type: none;
+	background-color: rgba(145, 145, 145, 1);
+	/* 设置大小为0，从而实现从小到大的动画 */
+	opacity: 0;
+	height: 0px;
+	width: 0px;
+	padding: 0px;
+	border-radius: 50%;
+	/* 设置字体 */
+	color: white;
+	font-weight: bold;	
+	font-size: 12pt;
+	/* 定位在@+的上方，隐藏超出部分 */
+	position: fixed;
+	left: 50%;
+	top: 68%;
+	text-align: center;
+	overflow: hidden;
+	transition: All 0.6s ease-in-out;
+}
+
+.info ul li{
+	min-height: 35px;
+}
+
+.info ul li img{
+	height: 27px;
+	width: auto;
+	cursor: pointer;
+}
+
+.info ul li span{
+	position: relative;
+	left: 5px;
+	top: -9px;
+	cursor: default;
+}
+
+.info ul .mine{
+	width: 40px;
+	height: auto;
+	color: rgba(0, 231, 157, 1);
+}
+
+.info ul .posted{
+	display: inline-table;
+}
+
+.info ul .like{
+	display: inline-table;
+}
+
+.info ul .comment span{
+	font-size: 30px;
+	top: -5px;
+	left: 10px;
+}
+
+#control-ring{
+	list-style-type: none;
+}
+
+#control-ring .button{
+	height: 20px;
+	width: 20px;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: rgba(127, 127, 127, 1);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 15px 15px;
+	/* 定位在和@+相同位置 */
+	position: fixed;
+	left: 50%;
+	top: 70%;
+	/* 初始化时为透明状态 */
+	opacity: 0;	
+	cursor: pointer;
+	/* 背景图在收回时瞬间隐藏，其它的有0.6s的渐隐时间 */
+	transition: All 0.6s ease-in-out, background-image 0s;
+}
+
+#control-ring .unread{
+	width: 5px;
+	height: 5px;
+	line-height: 5px;
+	padding: 7px;
+	border-radius: 50%;
+	background-color: rgba(255, 1, 1, 1);
+	display: block;
+	/* 定位在图标的右上角 */
+	position: relative;
+	left: 15px;
+	top: -11px;
+	color: white;
+	font-size: 5pt ! important;
+	/* 指针指向时不变为选择形状 */
+	cursor: default;
+	opacity: 0;
+	/* 设置默认渐变时间为0（在这里主要是为了在收回时直接隐藏
+	   展开的动画在hover后实现） */
+	transition: All 0s;
+}
+
+.apb .icon{
+	position: fixed !important;
+	top: 70% !important;
+	left: 50% !important;
+	background: url("../images/atplus_white.png") rgba(157 ,159 ,196, 1) no-repeat center;
+	background-size: 25px 20px;
+	height: 30px;
+	width: 30px;
+	padding: 0px;
+	border-radius: 50%;
+	/* 实现了@+在鼠标离开后延时0.6s后背景图先无渐变变化，
+	   停顿0.2s后背景色和扩大的效果渐变回初始状态 */
+	transition: background-color 1.3s 0.7s, transform 1.3s 0.7s, background-image 0s 0.6s;
+}
+
+#button:hover #info-bar ul{
+	height: 100px;
+	width: 100px;
+	padding: 20px;
+	border-radius: 50%;
+	opacity: 1;
+	/* 通过移动实现圆从下向上逐渐显出的效果 */
+	transform: translateX(-55px) translateY(-170px);
+}
+
+#button:hover .unread{
+	opacity: 1;
+	/* 实现鼠标指向时0.6s渐变的动画 */
+	transition: All 0.6s ease-in-out;
+}
+
+#button:hover .button{
+	opacity: 1;
+	/* 实现鼠标指向时0.6s渐变的动画 */
+	transition: All 0.6s ease-in-out;
+}
+
+/*实现在鼠标在按钮间是不收回*/
+#button:hover #control-ring-container{
+	position: absolute;
+	left: 50%;
+	top: 70%;
+}
+
+#button:hover #control-ring{
+	position: absolute;
+	left: -75px;
+	top: -75px;
+	border-radius: 50%;
+	width: 120px;
+	height: 150px;
+}
+
+/* 以下五个为鼠标触及时显示背景图同时移动，
+   在hover后再显示背景图与不同的transition实现了收回时背景图直接隐藏的效果 */
+#button:hover .mask{
+	transform: translateX(-60px) translateY(-35px);
+	background-image: url("../images/nomask.png");
+}
+
+#button:hover .history{
+	transform: translateX(-75px) translateY(0px);
+	background-image: url("../images/history.png");
+}
+
+#button:hover .message{
+	transform: translateX(-61px) translateY(37px);
+	background-image: url("../images/message.png");
+}
+
+#button:hover .setting{
+	transform: translateX(-20px) translateY(60px);
+	background-image: url("../images/setting.png");
+}
+
+#button:hover .sign{
+	transform: translateX(20px) translateY(55px);
+	background-image: url("../images/signin.png");
+}
+
+#button:hover .icon{
+	background: url("../images/atplus_green.png") rgba(48, 63, 159, 1) no-repeat center;
+	background-size: 25px 20px;
+	/* shake动画为鼠标接触@+时@+弹动一下的效果 */
+	animation: shake 0.2s;
+	/* 实现鼠标指向时0.6s渐变的动画 */
+	transition: All 0.6s ease-in-out;
+	transform: scale(2);
+}
+
+@keyframes shake{
+	0%{top: 70%;}
+	50%{top: 69%;}
+	100%{top: 70%;}
+}

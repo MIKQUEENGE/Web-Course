@@ -1,0 +1,128 @@
+body.tmnt{
+	background: url("../img/background.png");
+	font-size: 8pt;
+	margin: 0;
+	font-family: Verdana, Tahoma, sans-serif;
+}
+
+div.banner{
+	/* top of the page */
+	height: 50px;
+	margin: auto;
+	text-align: center;
+	background: url("../img/bannerbackground.png");
+}
+
+h1.header{
+	/* "TMNT (2007)" */
+	font-size: 24pt;
+	font-weight: bold;
+	font-family: Tahoma, Verdana, sans-serif;
+	text-align: center;
+	margin: 0;
+	padding: 20px;
+}
+
+div.content{
+	/* The main content of the page, the center block */
+	width: 800px;
+	margin: auto;
+	border: 4px solid gray;
+	overflow: hidden;
+}
+
+div.review{
+	width: 550px;
+	overflow: hidden;
+}
+
+div.rotten{
+	height: 83px;
+	line-height: 90px;
+	background: url("../img/rottenbackground.png");
+	font-size: 8pt;
+	color: white;
+	font-weight: normal;
+}
+
+img.rotten_img{
+	float: left;
+}
+
+span.rate{
+	font-size: 48pt;
+	font-weight: bold;
+	color: red;
+}
+
+div.review_row{
+	width: 47%;
+	margin-left: 2%;
+	float: left;
+}
+
+div.review_row p{
+	min-height: 25px;
+	font-weight: bold;
+	background-color: #E1D697;
+	padding: 8px;
+	border: 2px solid gray;
+}
+
+div.review_row p.person{
+	font-weight: normal;
+	background: none;
+	padding: 0px;
+	padding-bottom: 3em; 
+	border: 0px;
+}
+
+div.review_row img{
+	padding-right: 5px;
+	float: left;
+}
+
+div.review_row p span{
+	font-style: italic;
+}
+
+div.info{
+	width: 250px;
+	float: right;
+	background-color: #A2B964;
+	font-family: Arial, sans-serif;
+}
+
+div.info dl{
+	padding: 10px;
+	padding-top: 0em;
+}
+
+div.info dl dt.first{
+	padding-top: 0em;
+}
+
+div.info dt{
+	font-weight: bold;
+	padding-top: 1em;
+}
+
+p.bar{
+	background-color: #A2B964;
+	text-align: center;
+	padding: 5px;
+	bottom: 0px;
+	clear: right;
+	margin: 0;
+}
+
+a img{
+	border: 0;
+}
+
+div.w3c{
+	/* fixed at the right-center */
+	right: 0%;
+	bottom: 0%;
+	position: fixed;
+}
